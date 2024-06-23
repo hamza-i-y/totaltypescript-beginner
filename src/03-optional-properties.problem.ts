@@ -1,6 +1,19 @@
 import { expect, it } from "vitest";
 
-export const getName = (params: { first: string; last: string }) => {
+type TParams = {
+  first: string;
+  last?: string;
+};
+
+//Solution 1
+// export const getName = (params: { first: string; last?: string }) => {
+//   if (params.last) {
+//     return `${params.first} ${params.last}`;
+//   }
+//   return params.first;
+// };
+
+export const getName = (params: TParams) => {
   if (params.last) {
     return `${params.first} ${params.last}`;
   }
